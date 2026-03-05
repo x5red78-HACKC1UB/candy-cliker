@@ -1,17 +1,16 @@
 /*Again, ignore*/
 /* CSS */
 
-body{
+body {
   background-color: antiquewhite;
-  color: rgb(0, 0, 0);
-
+  color: black;
   margin: 0;
   height: 100vh;
-font-family: Comic Sans Ms;
+  font-family: Comic Sans MS;
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 
@@ -31,4 +30,44 @@ font-family: Comic Sans Ms;
 
 .moneybtn:active{
     transform: scale(0.95);
+}
+.layout{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.main{
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main h1{
+    text-align: center;
+}
+/* SHOP PANEL */
+
+.shopcontainer{
+  width: 260px;
+  background-color: black;
+  color: white;
+
+  padding: 20px;
+  box-sizing: border-box;
+   overflow-y: auto;
+}
+
+
+
+#shop div{
+  background: #222;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
 }

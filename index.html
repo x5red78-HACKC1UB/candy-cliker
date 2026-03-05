@@ -4,22 +4,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Clicker!</title>
    <link rel="stylesheet" href="style.css">
  <script src="game.js" defer></script>
+
 </head>
 <body>
-    <!--h1 to show money money-->
+  
+  <div class="layout">
+  <!-- the actual money button -->
+     <div class="main">
     <h1 id="moneyScore">0 money</h1>
-    <!-- the actual money button -->
     <button class="moneybtn">
+    <div class="filler"></div>
          <img src="money.svg" width="200">
     </button>
+    </div> <!--- div.main-->
+    <div class="shopcontainer">
    <h2>Shop</h2>
-  <div id="shop">
-    
-  </div>
+  <div id="shop"></div>
+  </div> <!--div.shopcontainer-->
+  </div>  <!--div.layout-->
 </body>
 </html>
