@@ -7,6 +7,17 @@ let mpc = 1
 
 const score = document.getElementById("moneyScore");
 const clicker = document.querySelector(".moneybtn");
+const shoptoggle = document.getElementById("shoponoff");
+const shopcontainer = document.querySelector(".shopcontainer");
+
+shoptoggle.addEventListener("click", () => {
+  shopcontainer.classList.toggle("open");
+  if (shopcontainer.classList.contains("open")) {
+    shoptoggle.textContent = "Hide Shop";
+  } else {
+    shoptoggle.textContent = "Show Shop";
+  }
+});
 
 function scoretxt() {
   score.textContent = Math.floor(money) + " money";
@@ -25,10 +36,13 @@ setInterval(() => {
 const shopitems = [
   { name: "Basic Cursor", price: 15, mpc: 1 }, //mpc = money per click. // { name: , price: , mpc:  } empty upgrades template to add any upgrade
   { name: "Auto Clicker", price: 35, mps: 1 }, //mps = money per sec. // { name: , price: , mps:  }
-{ name:"Cool Cursor" , price:100 , mpc:5  },
+  { name: "Triple Clickers", price:100 , mps:3  },
+{ name:"Cool Cursor" , price:250 , mpc:5  },
 
 ];
+
 const shop = document.getElementById("shop");
+
 function makeshop() {
   shop.innerHTML = ""; // clear shop to stop stacking
 
@@ -40,6 +54,8 @@ function makeshop() {
             <button id="sale${index}">Buy?</button>`; //labels id's in the index using $ pretty cool, right(so sale0, sale1 and etc.)
 
     shop.appendChild(itemstat);// actual bozx
+
+    setTimeout(() => itemstat.classList.add("show"), 50);
 
     document.getElementById(`sale${index}`).addEventListener("click", () => buyitem(index)); //“When this button is clicked, run buyitem(index).” best description i have
   });

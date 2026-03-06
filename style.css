@@ -1,73 +1,61 @@
-/*Again, ignore*/
-/* CSS */
-
-body {
-  background-color: antiquewhite;
-  color: black;
-  margin: 0;
-  height: 100vh;
-  font-family: Comic Sans MS;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-
-.moneybtn{
-   outline: none; 
-   border: none; 
-   padding: 0; 
-   background: none; 
-   cursor: pointer;
-   transition: transform 0.2s ease;
-}
-
-
-.moneybtn:hover{
-    transform: scale(1.1);
-}
-
-.moneybtn:active{
-    transform: scale(0.95);
-}
-.layout{
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
-
-
-
-.main{
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main h1{
-    text-align: center;
-}
-/* SHOP PANEL */
-
-.shopcontainer{
-  width: 260px;
-  background-color: black;
-  color: white;
-
-  padding: 20px;
-  box-sizing: border-box;
-   overflow-y: auto;
-}
-
-
-
-#shop div{
-  background: #222;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 6px;
-}
+/*Again, ignore*/ /* CSS */ body {
+   background-color: antiquewhite; 
+   color: black; 
+   margin: 0; 
+   height: 100vh; 
+   font-family: Comic Sans MS; 
+   display: flex; 
+   justify-content: center; 
+   align-items: flex-start; } 
+   
+   .moneybtn{ outline: none; 
+    border: none; 
+    padding: 0; 
+    background: none; 
+    cursor: pointer; 
+    transition: transform 0.2s ease; 
+  } 
+  
+  .moneybtn:hover{ 
+    transform: scale(1.1); 
+  }
+    
+    .moneybtn:active{ 
+      transform: scale(0.95); 
+    } 
+    .layout{ 
+      display: flex; 
+      width: 100%; 
+      height: 100vh; 
+    } 
+    
+    .main{ 
+      flex: 1; 
+      display: flex; 
+      flex-direction: 
+      column; justify-content: 
+      center; 
+      align-items: center; 
+    } .main h1{ 
+      text-align: center; 
+    } /* SHOP PANEL */ 
+    .shopbutton{ 
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+    } 
+    .shopcontainer { 
+      width: 260px; 
+      background-color: black; 
+      color: white; 
+      padding: 20px; 
+      box-sizing: border-box; 
+      max-height: 0; 
+      opacity: 0; 
+      overflow: hidden; 
+      transition: max-height 0.5s ease, opacity 0.5s ease; 
+    } 
+    .shopcontainer.open { 
+      max-height: 1000px; 
+      opacity: 1; 
+    } #shop div{ background: #222; margin-bottom: 10px; padding: 10px; border-radius: 6px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; } #shop div.show { opacity: 1; transform: translateY(0); }
