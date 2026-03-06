@@ -13,9 +13,9 @@ const shopcontainer = document.querySelector(".shopcontainer");
 shoptoggle.addEventListener("click", () => {
   shopcontainer.classList.toggle("open");
   if (shopcontainer.classList.contains("open")) {
-    shoptoggle.textContent = "Hide Shop";
+    shoptoggle.textContent = "Close";
   } else {
-    shoptoggle.textContent = "Show Shop";
+    shoptoggle.textContent = "Shop";
   }
 });
 

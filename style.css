@@ -1,4 +1,5 @@
-/*Again, ignore*/ /* CSS */ body {
+/*Again, ignore*/ /* CSS */ 
+body {
    background-color: antiquewhite; 
    color: black; 
    margin: 0; 
@@ -40,7 +41,6 @@
       text-align: center; 
     } /* SHOP PANEL */ 
     .shopbutton{ 
-      position: absolute; 
       top: 0; 
       right: 0; 
     } 
@@ -58,4 +58,30 @@
     .shopcontainer.open { 
       max-height: 1000px; 
       opacity: 1; 
-    } #shop div{ background: #222; margin-bottom: 10px; padding: 10px; border-radius: 6px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; } #shop div.show { opacity: 1; transform: translateY(0); }
+    } #shop div{ 
+      background: #222; 
+      margin-bottom: 10px; 
+      padding: 10px; 
+      border-radius: 6px; 
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: opacity 0.3s ease, 
+      transform 0.3s ease; 
+    } 
+    #shop div.show { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+    .shopbutton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
