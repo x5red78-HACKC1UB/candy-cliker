@@ -85,3 +85,49 @@ body {
   cursor: pointer;
   font-family: inherit;
 }
+#achievementsTab {
+  margin-top: 50px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+#achievements {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.coin {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: pointer;
+}
+
+  .audiobutton {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+  
+
