@@ -57,6 +57,7 @@ body {
     } 
     .shopcontainer.open { 
       max-height: 1000px; 
+      overflow-y: auto;
       opacity: 1; 
     } #shop div{ 
       background: #222; 
@@ -129,5 +130,57 @@ body {
   cursor: pointer;
   transition: 0.2s;
 }
+.prestige {
+  margin-left: 250px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  background: gold;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px gold;
+  transition: 0.2s;
+}
+
+.prestige:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px gold;
+}
+.goldshop{
+ margin-left: 500px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  background: gold;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+  .goldshop:hover {
+  transform: scale(1.1);
   
+}
+.goldshopcontainer {
+  position: absolute;
+  height:750px;
+  width: 1200px;
+  padding: 15px;
+  background: rgba(255, 213, 0, 1);
+  border-radius: 10px;
+  color: rgb(7, 3, 0);
+ display: none;
+}
+
+.goldshopcontainer.open {
+  display: block;
+}
+
 
