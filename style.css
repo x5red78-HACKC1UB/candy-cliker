@@ -120,7 +120,7 @@ body {
   .audiobutton {
   position: absolute;
   bottom: 20px;
-  right: 35px;
+  right: 20px;
   padding: 10px 15px;
   font-size: 1.2rem;
   background: rgba(0,0,0,0.4);
@@ -156,7 +156,7 @@ body {
   top: 20px;
   left: 20px;
   padding: 12px 20px;
-  background: gold;
+  background: rgb(46, 252, 207);
   color: black;
   border: none;
   border-radius: 10px;
@@ -173,7 +173,7 @@ body {
   height:750px;
   width: 1200px;
   padding: 15px;
-  background: rgba(255, 213, 0, 1);
+  background: rgb(8, 53, 47);
   border-radius: 10px;
   color: rgb(7, 3, 0);
  display: none;
@@ -183,10 +183,10 @@ body {
   display: block;
 }
 .stereobutton{
-  margin-right: 80px;
+  margin-right: 100px;
    position: absolute;
   bottom: 20px;
-  right: 35px;
+  right: 20px;
   padding: 10px 15px;
   font-size: 1.2rem;
   background: rgba(0,0,0,0.4);
@@ -194,7 +194,23 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
-
-
+.stereobutton:hover{
+  transform: scale(1.1);
+}
+.ultraprestige{
+  position: absolute;
+  background: #9cf0f6;
+  color:rgb(0, 0, 0);
+  padding: auto;
+  font-size: 1.2rem;
+  cursor:pointer;
+  box-shadow: 0,0,15px,#9dd0d4;
+  bottom: 20px;
+  left: 20px;
+transition: 0.2s ease;
+}
+.ultraprestige:hover{
+    transform: scale(1.1);
+  }

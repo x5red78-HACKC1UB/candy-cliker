@@ -1,5 +1,7 @@
 //Lastly ignore
 // js
+//NOTE FUCTIONS MAKEGOLDSHOPPY & BUYGOLDITEM are GEMS/GOLD I DONT FEEL LIKE CHNGING THE NAME
+//SO CONSIDER YOUSELF WARNED
 //lets
 let money = 0; //just read
 let mps = 0;
@@ -14,6 +16,7 @@ let clickspeed=0;
 let muted=false;
 let multiplier=0;
 let ultraprestige=0;
+let gems=0;
 
 
 //consts
@@ -27,6 +30,7 @@ const shutupbutton = document.getElementById("shutupbutton");
 const prestigebtn= document.getElementById("prestigebtn");
 const goldshopbtn = document.getElementById("goldshopbtn");
 const goldshopcontainer = document.getElementById("goldshopcontainer");
+const ultraprestigebtn= document.getElementById("ultraprestige")
 const coinsound= new Audio;
 coinsound.src="lol.wav";
 let currentTracky = 0;
@@ -88,10 +92,11 @@ goldshopbtn.addEventListener("click", () => {
   goldshopcontainer.classList.toggle("open");
 
   if (goldshopcontainer.classList.contains("open")) {
-    goldshopbtn.textContent = "Close Gold Shop";
+    goldshopbtn.textContent = "Close Special Shop";
      goldtxt();
+     gemtxt();
   } else {
-    goldshopbtn.textContent = "Gold Shop";
+    goldshopbtn.textContent = "Special Shop";
   }
 });
 
@@ -102,7 +107,9 @@ function scoretxt() {
 function goldtxt() {
   goldamount.textContent = Math.floor(gold) + " gold";
 }
-
+function gemtxt() {
+  gemsamount.textContent = Math.floor(gems) + " gems";
+}
 // what makes the money actually happen
 clicker.addEventListener("click", function () {
   money += mpc;
@@ -142,12 +149,35 @@ gold+=(Math.floor(money/10000));
 ];
 
 
+
 scoretxt();
 goldtxt();
   checkachievementssteamhappy();
   }
 });
+ultraprestigebtn.addEventListener("click", ()=>{
 
+ if (gold < 100) {
+    alert("Not enough gold!");
+    return;
+  }else{
+gems+=Math.floor(gold/100);
+gold=0;
+ shopitems = [
+  { name: "Basic Cursor", price: 15, mpc: 2, }, //mpc = money per click. //{ name:"" , price: , mpc:  }  empty upgrades template to add any upgrade
+  { name: "Auto Clicker", price: 35, mps: 1 }, //mps = money per sec. // { name:"" , price: , mps:  }
+  { name: "Triple Clickers", price:100 , mps:3  },
+{ name:"Cool Cursor" , price:250 , mpc:10  },
+{ name:"Clicker Crew" , price:700 , mps:20  },
+{ name:"Clicker Mine" , price:1500 , mps:30  },
+{ name:"Stone Clicker" , price:2000 , mpc: 50 },
+{ name:"Clicker Storm" , price:3000 , mps:200  },
+{ name:"Iron Clicker" , price:5000 , mpc:150  },
+{ name:"Clicker Vortex" , price:9000 , mps:700  },
+{ name:"Diamond Clicker" , price:15000 , mpc:1200 },
+];
+  }
+});
 //shopping :D
 let shopitems = [
   { name: "Basic Cursor", price: 15, mpc: 2, }, //mpc = money per click. //{ name:"" , price: , mpc:  }  empty upgrades template to add any upgrade
@@ -211,20 +241,24 @@ function buyitem(index) {
   }
 }
 const goldshopitems = [
-  { name: "Golden multiplier", price: 1, startingmpc: 4 },
-  { name: "Golden Auto Clicker", price: 10, clickspeed: 25 },
-  { name: "Money enhance", price: 100, multiplier: 2 }
+  { name: "Golden multiplier", gold: 1, startingmpc: 4 },
+  { name: "Golden Auto Clicker", gold: 10, clickspeed: 25 },
+  { name: "Money enhance", gold: 100, multiplier: 2 }
 ];
 function makegoldshoppy() {
-  goldshop.innerHTML = "";
-  goldshopitems.forEach((item, index) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
+  goldshopbtn.innerHTML="";
+  goldshopitems.forEach((item,index) =>{
+    const div=document.createElement("div");
+
+    let currencyswapping ="";
+    if(item.gold>0) currencyswapping += `${item.gold} gold `;
+    if (item.gems > 0) currencyswapping += `${item.gems} gems`;
+ div.innerHTML = `
       <strong>${item.name}</strong><br>
-      Cost: ${item.price} gold<br>
+      Cost: ${currencyswapping}<br>
       <button id="goldbuy${index}">Buy</button>
     `;
-    goldshop.appendChild(div);
+     goldshop.appendChild(div);
 
     document.getElementById(`goldbuy${index}`).addEventListener("click", () => {
       buygolditem(index);
@@ -235,29 +269,42 @@ function makegoldshoppy() {
 function buygolditem(index) {
   const item = goldshopitems[index];
 
-  if (gold >= item.price) {
-    gold -= item.price;
-    goldtxt();
+  
+  if (gold >= item.gold && gems >= item.gems) {
 
+    
+    gold -= item.gold;
+    gems -= item.gems;
+    goldtxt();
+    gemtxt();
+
+    
     if (item.mpc) mpc += item.mpc;
     if (item.mps) mps += item.mps;
+
     if (item.multiplier) {
       mpc *= item.multiplier;
       mps *= item.multiplier;
     }
+
     if (item.clickspeed) clickspeed += item.clickspeed;
+
     if (item.startingmpc) {
       startingmpc += item.startingmpc;
       mpc += item.startingmpc;
     }
-item.price = Math.floor(item.price+5);
+
+    
+    item.gold = Math.floor(item.gold + 5);
+    item.gems = Math.floor(item.gems + 1);
+
     scoretxt();
     makegoldshoppy();
+
   } else {
-    alert("Not enough gold!");
+    alert("Not enough gold/gems!");
   }
 }
-
 
 //achievements
 const achievementsBtn = document.getElementById("achievements");
