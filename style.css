@@ -182,5 +182,19 @@ body {
 .goldshopcontainer.open {
   display: block;
 }
+.stereobutton{
+  margin-right: 80px;
+   position: absolute;
+  bottom: 20px;
+  right: 35px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
 

@@ -1,7 +1,7 @@
 //Lastly ignore
 // js
 //lets
-let money = 10000000; //just read
+let money = 0; //just read
 let mps = 0;
 let startingmpc=0;
 let mpc = 1 +startingmpc;
@@ -27,15 +27,34 @@ const shutupbutton = document.getElementById("shutupbutton");
 const prestigebtn= document.getElementById("prestigebtn");
 const goldshopbtn = document.getElementById("goldshopbtn");
 const goldshopcontainer = document.getElementById("goldshopcontainer");
-
 const coinsound= new Audio;
 coinsound.src="lol.wav";
+let currentTracky = 0;
+const PLAYLIST=[
+"bg.mp3",
+"bg2.mp3",
+"bg3.mp3",
+"bg4.mp3",
+"bg5.mp3",
+];
 
-let bgsound=new Audio("bg.mp3")
+
+ let bgsound = new Audio(PLAYLIST[currentTracky]);
 bgsound.loop=true;
 bgsound.volume = 0.42;
 bgsound.play();
+document.getElementById("stereo").addEventListener("click", () => {
+  currentTracky++;
 
+ if (currentTracky >= PLAYLIST.length) {
+    currentTracky = 0;
+  }
+   bgsound.pause();
+  bgsound = new Audio(PLAYLIST[currentTracky]);
+  bgsound.loop = true;
+  bgsound.volume = 0.20;
+  bgsound.play();
+});
 document.addEventListener("click", () => {
   bgsound.play();
 }, { once: true });
@@ -302,8 +321,8 @@ function oohshiny(){
    checkachievementssteamhappy();
   coin.remove();
  }
- setTimeout(() => coin.remove(), 10000);
  });
+ setTimeout(() => coin.remove(), 10000);
 }
 function spawncoin() {
   const wait = (40 + Math.random() * 40) * 1000; 
