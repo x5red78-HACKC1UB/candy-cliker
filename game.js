@@ -29,13 +29,29 @@ const shop = document.getElementById("shop");
 const shutupbutton = document.getElementById("shutupbutton");
 const prestigebtn= document.getElementById("prestigebtn");
 const goldshopbtn = document.getElementById("goldshopbtn");
+const goldshop = document.getElementById("goldshop");
 const goldshopcontainer = document.getElementById("goldshopcontainer");
 const ultraprestigebtn= document.getElementById("ultraprestige")
+const craftybutton= document.getElementById("craft");
+const craftcontainer=document.getElementById("craftingcontainer")
 const coinsound= new Audio;
 coinsound.src="lol.wav";
+let inventory={
+  nature:0,
+  mineral:0,
+  light:0,
+  dark:0,
+  game:0,
+}
+const recipes=[      //format.   {input:["",""] , output:[""] },
+  {input:["nature","mineral"] , output:["Nature's Ring"] },
+  {input:["nature","light"] , output:["Ascended Roots"] },
+  
+
+]
 let currentTracky = 0;
 const PLAYLIST=[
-"bg.mp3",
+"bg.wav",
 "bg2.mp3",
 "bg3.mp3",
 "bg4.mp3",
@@ -97,6 +113,15 @@ goldshopbtn.addEventListener("click", () => {
      gemtxt();
   } else {
     goldshopbtn.textContent = "Special Shop";
+  }
+});
+craftybutton.addEventListener("click", () => {
+  craftcontainer.classList.toggle("open");
+
+  if (craftcontainer.classList.contains("open")) {
+    craftybutton.textContent = "Close";
+  } else {
+    craftybutton.textContent = "Craft";
   }
 });
 
@@ -246,7 +271,7 @@ const goldshopitems = [
   { name: "Money enhance", gold: 100, multiplier: 2 }
 ];
 function makegoldshoppy() {
-  goldshopbtn.innerHTML="";
+  goldshop.innerHTML="";
   goldshopitems.forEach((item,index) =>{
     const div=document.createElement("div");
 
@@ -324,7 +349,10 @@ let achievements = [
 { name:"100 clicks" , unlocked:false , condition: () => clicks>=100 },
 { name:"1000 clicks" , unlocked:false , condition: () => clicks>=1000 },
 { name:"10000 clicks" , unlocked:false , condition: () => clicks>=10000 },
-{ name:"Prestige" , unlocked:false , condition: () =>gold>=1  }
+{ name:"Prestige" , unlocked:false , condition: () =>gold>=1  },
+{ name:"Ultra presige" , unlocked:false , condition: () => gems>=1 },
+{ name:"Powerclick" , unlocked:false , condition: () =>mpc>=1000  },
+333
 ];
 
 function checkachievementssteamhappy() {

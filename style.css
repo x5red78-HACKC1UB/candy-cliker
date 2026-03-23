@@ -93,7 +93,7 @@ body {
   left: 20px;
   width: 300px;
   background: white;
-  padding: 15px;
+  padding: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -170,6 +170,7 @@ body {
 }
 .goldshopcontainer {
   position: absolute;
+  padding: auto;
   height:750px;
   width: 1200px;
   padding: 15px;
@@ -213,4 +214,32 @@ transition: 0.2s ease;
 }
 .ultraprestige:hover{
     transform: scale(1.1);
+  }
+  .craft{
+    margin-top: 350px;
+     position: absolute;
+    background: #361f00;
+    color:rgb(0, 0, 0);
+     padding: auto;
+     cursor: pointer;
+     font-size: 1.2rem;
+     top: 20px;
+     left:20px;
+     height: 50px;
+     width: 200px;
+  }
+  .craftcontainer{
+    position: absolute;
+    display: none;
+    height:750px;
+  width: 1200px;
+  background: #361f00;
+  color: aliceblue;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: auto;
+  
+  }
+  .craftcontainer.open{
+    display:block;
   }
